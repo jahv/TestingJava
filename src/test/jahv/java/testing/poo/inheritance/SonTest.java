@@ -43,6 +43,6 @@ public class SonTest {
 		final String getInfo = fakeSon.getInfo();
 
 		Assert.assertNotNull(getInfo);
-		System.out.println(getInfo);
+		Assert.assertTrue(getInfo.contains("FAKE"));
 	}
 }
