@@ -1,5 +1,9 @@
 package jahv.java.testing.book.tdd.mockito.ch6;
 
+import jahv.java.testing.book.tdd.mockito.ch6.stock.Stock;
+import jahv.java.testing.book.tdd.mockito.ch6.stock.StockBroker;
+import jahv.java.testing.book.tdd.mockito.ch6.stock.StockListener;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentMatcher;
@@ -15,7 +19,7 @@ import org.mockito.MockitoAnnotations;
  * @author jose.hernandez
  *
  */
-public class StockListenerTest {
+public class StockListener_MockitoArgumentMatcher_Test {
 
 	private StockListener stockListener;
 
@@ -36,6 +40,7 @@ public class StockListenerTest {
 		Mockito.when(stockBroker.getQoute(Mockito.argThat(new BlueChipStockMatcher()))).thenReturn(1000.0);
 		stockListener.takeAction(new Stock("SBI", 500.0));
 		Mockito.verify(stockBroker).sell(Mockito.isA(Stock.class), Mockito.anyInt());
+		Mockito.verify(stockBroker, Mockito.times(0)).buy(Mockito.isA(Stock.class), Mockito.anyInt());
 	}
 
 	/**
@@ -46,6 +51,7 @@ public class StockListenerTest {
 		Mockito.when(stockBroker.getQoute(Mockito.argThat(new BlueChipStockMatcher()))).thenReturn(1000.0);
 		stockListener.takeAction(new Stock("OTHER", 500.0));
 		Mockito.verify(stockBroker).buy(Mockito.isA(Stock.class), Mockito.anyInt());
+		Mockito.verify(stockBroker, Mockito.times(0)).sell(Mockito.isA(Stock.class), Mockito.anyInt());
 
 	}
 }

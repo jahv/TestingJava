@@ -1,4 +1,4 @@
-package jahv.java.testing.book.tdd.mockito.ch6;
+package jahv.java.testing.book.tdd.mockito.ch6.bazar;
 
 import java.util.List;
 

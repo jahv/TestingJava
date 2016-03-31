@@ -1,5 +1,11 @@
 package jahv.java.testing.book.tdd.mockito.ch6;
 
+import jahv.java.testing.book.tdd.mockito.ch6.bazar.BiggestBazarRetail;
+import jahv.java.testing.book.tdd.mockito.ch6.bazar.Inventory;
+import jahv.java.testing.book.tdd.mockito.ch6.bazar.Item;
+import jahv.java.testing.book.tdd.mockito.ch6.bazar.Offer;
+import jahv.java.testing.book.tdd.mockito.ch6.bazar.PublicAddressSystem;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +25,7 @@ import org.mockito.internal.verification.Times;
  * @author jose.hernandez
  *
  */
-public class BiggestBazarRetailTest {
+public class BiggestBazarRetail_MockitoVerify_Test {
 
 	private BiggestBazarRetail bazar;
 	private List<Item> expiredItems = new ArrayList<Item>();
