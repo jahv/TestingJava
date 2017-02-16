@@ -65,7 +65,6 @@ public class MyClassTest {
         PowerMock.verifyAll();
     }
 
-
     /**
      * Using partial mock for only mocking the getData method
      * Inject mock by reflection
